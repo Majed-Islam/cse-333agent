@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html><head><title>Personal Data Base</title><link rel="icon" href="PicsArt_11-24-11.18.08.jpg"></head>
-<body><p><big style="font-size:80px;font-weight:bold; color:purple;"><u>CSE-333 Agent</u></big></p>
+<body><p style="text-align: right;"><button "type="button"; style="font-size: 25px; width:250px; height:150px; cursor:pointer;background-color:white;color:black;text-align: center;"><b><body onload="initClock()">
+
+    <!--digital clock start-->
+    <div class="datetime">
+      <div class="date">
+        <span id="dayname">Day</span>,
+        <span id="month">Month</span>
+        <span id="daynum">00</span>,
+        <span id="year">Year</span>
+      </div>
+      <div class="time">
+        <span id="hour">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>
+        <span id="period">AM</span>
+      </div>
+    </div>
+    <!--digital clock end-->
+
+    <script type="text/javascript">
+    function updateClock(){
+      var now = new Date();
+      var dname = now.getDay(),
+          mo = now.getMonth(),
+          dnum = now.getDate(),
+          yr = now.getFullYear(),
+          hou = now.getHours(),
+          min = now.getMinutes(),
+          sec = now.getSeconds(),
+          pe = "AM";
+
+          if(hou >= 12){
+            pe = "PM";
+          }
+          if(hou == 0){
+            hou = 12;
+          }
+          if(hou > 12){
+            hou = hou - 12;
+          }
+
+          Number.prototype.pad = function(digits){
+            for(var n = this.toString(); n.length < digits; n = 0 + n);
+            return n;
+          }
+
+          var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+          var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+          var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+          for(var i = 0; i < ids.length; i++)
+          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+    }
+
+    function initClock(){
+      updateClock();
+      window.setInterval("updateClock()", 1);
+    }
+    </script></b></button></p><p><big style="font-size:80px;font-weight:bold; color:purple;"><u>CSE-333 Agent</u></big></p>
 <big style="font-size:50px;font-weight:bold;">☞Texts for sticky note</big>
 <b><br>For Municipality Area:</br>
-<br>Ward: , Municipality:</br>
+Ward: , Municipality:
 <br>For Union:</br>
-<br>Ward: , Union:</br>
+Ward: , Union:
 <br>For DNCC/DSCC Area:</br>
-<br>Area: , Road: , Ward:</br>
+Area: , Road: , Ward:
 <br>For Other City Corporation Area:</br>
-<br>Area: , Ward: , Thana:</br></b>
+Area: , Ward: , Thana:</b>
 <br><h3>Request Details: According to the caller currently he/she did not get any food support. Now caller needs emergency food assistance.</h3></br>
 <p><big style="font-size:50px;font-weight:bold;">☞Others Info</big></p>
 <ul type="dot">
@@ -17,12 +75,14 @@
 <br>ID: 333_01_agent_user</br>
 <br>Pass: 333_nbr_01</br></b>
 <br><big style="font-size:50px;font-weight:bold;color:red;">☞Important links</big></br>
-<h5><br><a href="http://172.16.113.46/gencall/cse_login.php?relogin=YES">Agent Page Link(gencall)</a></br>
+<h3><br><a href="http://172.16.113.46/gencall/cse_login.php?relogin=YES">Agent Page Link(gencall)</a></br>
 <br><a href="http://172.16.112.23/333crm/crm.php">
 CRM Link
 </a></br>
 <br><a href="http://172.16.112.24/kb/index.php?action=artikel&cat=334&id=345&artlang=en">Genex KMS</a></br>
-<a href="https://vclock.com/timer/#countdown=00:00:36&enabled=0&seconds=0&sound=twinkle&loop=0">Online Countdown Timer</a></h5>
+<br><a href="http://172.16.113.46/vicidial/report.php">Vicidal Report</a></br>
+<br><a href="https://vclock.com/timer/#countdown=00:00:36&enabled=0&seconds=0&sound=twinkle&loop=0">Online Countdown Timer</a></br>
+<br><a href="https://online-calculator.org/reverse-age-calculator.aspx">Age calculator</a></br></h3>
 <br><big style="font-size:50px;font-weight:bold;color:green;">☞Click the link below for download CRM file (Excel)</big></br>
 <big style="font-size:30px;font-weight:bold;"><a href="CRM Entry Form by Majed.xlsx" download="CRM form by Majed">Download link of CRM form by Majed</a></big>
 <pre>
@@ -33,5 +93,6 @@ CRM Link
 				
 				
 </pre>
-<p style="text-align: center;"><button "type="button" onclick="alert('Author: Majed Islam. Email:majedislam139@gmail.com')"style="font-size: 30px; width:300px; height:100px; cursor:pointer;background-color:green;color:yellow;text-align: center;"><b>Click for Author Info</b></button></p>
+<p style="text-align: center;"><button "type="button" onclick="alert('Author: Majed Islam. Email: majedislam139@gmail.com')"style="font-size: 30px; width:250px; height:100px; cursor:pointer;background-color:#40fff5;color:black;text-align: center;"><b>Click for Author Info</b></button></p>
+ 
 </body></html>
