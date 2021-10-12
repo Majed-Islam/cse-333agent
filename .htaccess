@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Password Protected Area"
-AuthUserFile /storage/emulated/0/333 html/.htpassword
-Require valid-user
